@@ -95,13 +95,8 @@ for (let packageType in pantry) {
 console.log(""); // skip a line in console
 
 // TODO: Write a function that takes in an index number, prints "Items at index (x):" and then prints the element at that index of each array as you loop through the object. Use the escape character \t to indent each item for that index. If the array doesn't have anything at that index, it should be skipped without throwing an error. (Note: you don't need nested loops for this one.)
-let people = {
-	name: "Alice",
-	age: 30,
-	city: "Wonderland",
-  };
 
-  function printItemAtIndex(obj, index) {
+  /*function printItemAtIndex(index) {
 	let keys = Object.keys(obj); // ["name", "age", "city"]
 	
 	if (index >= 0 && index < keys.length) {
@@ -111,9 +106,10 @@ let people = {
 	} else {
 	  console.log(`Index ${index} is out of range.`);
 	}
-  }
+  } 
 
   printItemAtIndex(people, 1);
+  */
 
 // TODO: Call the function above at 2 or 3 different index numbers and check to see the results are what you expect.
 
@@ -124,8 +120,8 @@ let people = {
 function printItemsByType(type) {
 	if (Array.isArray(pantry[type])) {// check if the array exists
 		console.log(`Items that are ${type}:`);// print the type
-		for (let i = 0; i < pantry[type].length; i++) {// loop through the array
-			console.log(`- ${pantry[type][i]}`);// print each item with a dash
+		for (let element of pantry[type]) {// loop through the array
+			console.log(`- ${element}`);// print each item with a dash
 		}
 	} else {
 		console.log(`No items found for package type: ${type}`);

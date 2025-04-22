@@ -113,14 +113,16 @@ let attractions = [RoseGarden, Zoo];// Array of objects
 
 // TODO: use nested loops to print values inside objects
 for (let obj of attractions) {// Outer loop for the array of objects
-	for (let key in i) {// Inner loop for the object properties
-		if (Array.isArray(i[key])) {// Check if the property is an array
-			for (let j = 0; j < attractions[i][key].length; j++) { // Loop through the array elements
+	console.log(`\n`);
+	for (let key in obj) {// Inner loop for the object properties
+		if (Array.isArray(obj[key])) {// Check if the property is an array
+			console.log(`${key}: `);
+			for (let element of obj[key]) { // Loop through the array elements
 				// Print each element in the array
-				console.log(attractions[i][key][j]);
-			}
+				console.log(element);
+						}
 		} else {
-			console.log(attractions[i][key]);// Prints the ones that are not arrays 
+			console.log(obj[key]);// Prints the ones that are not arrays 
 		}
 	}
 }
@@ -135,5 +137,9 @@ for (let obj of attractions) {// Outer loop for the array of objects
 */
 
 // TODO: Print a template literal
+
+for(obj of attractions) {
+	console.log(`\n **********************************************\n${obj.name} - ${obj.location}\n **********************************************\n A favorite with the locals, the ${obj.name} features a lot of attractions including ${obj.famousFeatures[0]} , ${obj.famousFeatures[1]}, and ${obj.famousFeatures[2]}. Admission is ${obj.adultticketPrice} for adults, ${obj.childTicketPrice} for children ages 5-12, and free for children 4 and under.`);
+};
 
 
