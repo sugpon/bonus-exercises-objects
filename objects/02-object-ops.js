@@ -71,7 +71,6 @@ for (let restaurant of restaurants) {
 	console.log(`\nNext time you take a road trip through the Southwest, don't miss ${restaurant.name} in ${restaurant.location}, best in class for its ${restaurant.cuisine} fare. Signature dishes include the mouth-watering ${restaurant.knownFor[0]}, ${restaurant.knownFor[1]}, and the delicious ${restaurant.knownFor[2]}. \nPrice rating: ${restaurant.priceRating}\n`);
 }
 
-
 /**** YOUR TURN! ****/
 
 /*
@@ -87,6 +86,24 @@ for (let restaurant of restaurants) {
 */
 
 // TODO: create objects and put them in an array
+let RoseGarden = {
+	name: "Rose Garden",
+	location: "St. Louis",
+	adultticketPrice:"Adult Ticket Price: 15",
+	childTicketPrice: "Children Ticket Price: 10",
+	famousFeatures: ["English Roses", "Hybrid Tea Roses", "Knock out Roses"],
+}
+
+let Zoo= {
+	name: "St. Louis Zoo",
+	location: "St. Louis",
+	adultticketPrice:"Adult Ticket Price: 15",
+	childTicketPrice: "Children Ticket Price: 10",
+	famousFeatures: ["Red Panda", "Polar Bear", "Indian Elephants"],
+	}
+
+let attractions = [RoseGarden, Zoo];// Array of objects
+//console.log(attractions);
 
 /*
 	Loop through the array, then within that for loop, use a for...in loop to grab values from each key and print them to the console. If you come across a key storing an array, print each element in the array instead of the array itself. Remember that you need a new index variable with each nested FOR loop (i, j are common).
@@ -95,7 +112,19 @@ for (let restaurant of restaurants) {
 */
 
 // TODO: use nested loops to print values inside objects
-
+for (let obj of attractions) {// Outer loop for the array of objects
+	for (let key in i) {// Inner loop for the object properties
+		if (Array.isArray(i[key])) {// Check if the property is an array
+			for (let j = 0; j < attractions[i][key].length; j++) { // Loop through the array elements
+				// Print each element in the array
+				console.log(attractions[i][key][j]);
+			}
+		} else {
+			console.log(attractions[i][key]);// Prints the ones that are not arrays 
+		}
+	}
+}
+	
 /*
 	Last task: loop through the outer array and print a single template literal for each attraction using placeholders referencing the object at each index. Here's an example:
 
@@ -106,4 +135,5 @@ for (let restaurant of restaurants) {
 */
 
 // TODO: Print a template literal
+
 
