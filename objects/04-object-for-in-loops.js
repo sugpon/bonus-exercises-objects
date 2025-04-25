@@ -96,14 +96,20 @@ console.log(""); // skip a line in console
 
 // TODO: Write a function that takes in an index number, prints "Items at index (x):" and then prints the element at that index of each array as you loop through the object. Use the escape character \t to indent each item for that index. If the array doesn't have anything at that index, it should be skipped without throwing an error. (Note: you don't need nested loops for this one.)
 
-function printItemAtIndex(index) {
-	for (let packageType in pantry) {// loop through the object
-		if (pantry[packageType][index] !== undefined) {// check if the index exists
-			console.log(`Items at index ${index}:`);// print the index
-			console.log(`\t${pantry[packageType][index]}`);// print the item at that index with a tab
-		}
+  /*function printItemAtIndex(index) {
+	let keys = Object.keys(obj); // ["name", "age", "city"]
+	
+	if (index >= 0 && index < keys.length) {
+	  let key = keys[index];
+	  console.log(`Item at index ${index}:`);
+	  console.log(`\t${key}: ${obj[key]}`);
+	} else {
+	  console.log(`Index ${index} is out of range.`);
 	}
-}
+  } 
+
+  printItemAtIndex(people, 1);
+  */
 
 // TODO: Call the function above at 2 or 3 different index numbers and check to see the results are what you expect.
 printItemAtIndex(0);// expect "Items at index 0: peanut butter, black-eyed peas, rotini pasta, 15-bean soup mix"
