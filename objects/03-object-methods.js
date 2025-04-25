@@ -52,14 +52,15 @@ let num2 = 3;
 console.log(add.doTheMath(num1, num2));
 
 // TODO: Call the subtractTwo function by referencing the subtract object and print the result.
-
+console.log(subtract.doTheMath(num1, num2));
 
 // TODO: Call the anonymous multiplication method in the multiple object and print the result.
-
+console.log(multiply.doTheMath(num1, num1));
 
 // TODO: Reference the object and its property key and call all three methods with new numbers passed directly as arguments for the parameters a and b. Choose whatever numbers you want.
-
-
+console.log(add.doTheMath(20,5));
+console.log(subtract.doTheMath(10,5));
+console.log(multiply.doTheMath(10,4));
 
 /**** WRITING YOUR OWN METHODS ****/
 
@@ -77,7 +78,9 @@ let peanutMMs = {
 	type: "chocolate",
 	slogan: "Melts in your mouth, not in your hand",
 	// TODO: add describeCandy property (method) referencing your external named function
-
+	describeCandy: function() {
+		console.log(`The ${peanutMMs.name} is a ${peanutMMs.type} caandy, it ${peanutMMs.slogan}`);
+	}
 };
 
 // TODO: write a function for the skittles description
@@ -88,7 +91,9 @@ let skittles = {
 	type: "fruit-flavored",
 	slogan: "Taste the rainbow",
 	// TODO: add describeCandy property (method) referencing your external function that is stored in a variable
-	
+	describeCandy: function() {
+		console.log(`The ${skittles.name} is a ${skittles.type} candy, ${skittles.slogan}`);
+	}
 };
 
 let werthers = {
@@ -96,11 +101,17 @@ let werthers = {
 	type: "caramel",
 	slogan: "A little piece of bliss",
 	// TODO: add describeCandy property (method) as an anonymous function here inside the object... and while you're at it, mention the name and type of the candy in your sentence by referencing those properties within the object! (Hint: remember that inside an object you use "this" instead of the object name to reference its own properties.)
-
+	describeCandy:  function() {
+		console.log(`The ${this.name} is a ${this.type} candy, it is ${this.slogan}`);
+	}
 };
 
 // TODO: Put all three objects in an array. Loop through to run the function for each object.
 
+let candyArray=[peanutMMs, skittles, werthers];
+for (let element of candyArray){
+	element.describeCandy(); // Call the describeCandy method for each object in the array
+}
 
 /* 
 	To sum up, the major advantage of writing an anonymous function inside the object directly is that you can access other properties of the object easily without having to pass anything in through a parameter.

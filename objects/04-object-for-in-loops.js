@@ -87,7 +87,7 @@ for (let packageType in pantry) {
 	console.log("-".repeat(packageType.length));
 	// Now we will set up a regular for loop inside to handle printing each element of each array.
 	for (let foodItem of packageType) {
-		console.log(foodItem);
+		console.log(foodItem );
 	}
 }
 // Run the program to see the results in the console. Nicely formatted, right? Notice how each array had a different number of items, but we handled that by taking the length of each array, as pantry[packageType] is the correct way to refer to the value of each property.
@@ -96,23 +96,20 @@ console.log(""); // skip a line in console
 
 // TODO: Write a function that takes in an index number, prints "Items at index (x):" and then prints the element at that index of each array as you loop through the object. Use the escape character \t to indent each item for that index. If the array doesn't have anything at that index, it should be skipped without throwing an error. (Note: you don't need nested loops for this one.)
 
-  /*function printItemAtIndex(index) {
-	let keys = Object.keys(obj); // ["name", "age", "city"]
-	
-	if (index >= 0 && index < keys.length) {
-	  let key = keys[index];
-	  console.log(`Item at index ${index}:`);
-	  console.log(`\t${key}: ${obj[key]}`);
-	} else {
-	  console.log(`Index ${index} is out of range.`);
+function printItemAtIndex(index) {
+	for (let packageType in pantry) {// loop through the object
+		if (pantry[packageType][index] !== undefined) {// check if the index exists
+			console.log(`Items at index ${index}:`);// print the index
+			console.log(`\t${pantry[packageType][index]}`);// print the item at that index with a tab
+		}
 	}
-  } 
-
-  printItemAtIndex(people, 1);
-  */
+}
 
 // TODO: Call the function above at 2 or 3 different index numbers and check to see the results are what you expect.
-
+printItemAtIndex(0);// expect "Items at index 0: peanut butter, black-eyed peas, rotini pasta, 15-bean soup mix"
+printItemAtIndex(1);// expect "Items at index 1: canola oil, cuban black beans, cereal, jasmine rice"
+printItemAtIndex(2);// expect "Items at index 2: coconut cream, marinara sauce, oatmeal, undefined"
+printItemAtIndex(3);// expect "Items at index 3: undefined, undefined, crackers, undefined"
 
 // TODO: Now write a function that takes a package type as a parameter and then prints all the items of the array only for that package type. This time, print "Items that are (type):" and then put a "- " in front of each item from that array. (Hint: if you already know the name of the package type, you don't need a for...in loop to check every property!)
 
