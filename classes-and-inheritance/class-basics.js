@@ -148,7 +148,21 @@ yellowBellPepper.calculateTotal(5); // 5 peppers
 // TODO: What's going in your dinner salad tonight? Create 3-4 more objects, then call 
 // describe() and calculateTotal() for each
 
+let cucumber = new Produce("cucumber", "vegetable", "each", 0.75);
+let garbanzoBeans= new Produce("garbanzo beans", "canned", "each", 1);
+let eggs= new Produce("eggs", "Protein", "dozen", 3.50);
+let	lettuce= new Produce("lettuce", "vegetable", "each", 1);
+cucumber.describe();
+cucumber.calculateTotal(2);
+garbanzoBeans.describe();
+garbanzoBeans.calculateTotal(2);
+eggs.describe();
+eggs.calculateTotal(6);
+lettuce.describe();
+lettuce.calculateTotal(1);
 
+console.log(`My Dinner Salad contains: ${cucumber.name}, ${garbanzoBeans.name},${eggs.name}, ${lettuce.name} with  dash of mayonasisse, honey mustard& dash of crushed red pepper flakes`);
+console.log(`My Dinner Salad for my family costs: $${cucumber.costPerUnit*2+ garbanzoBeans.costPerUnit + eggs.costPerUnit*3+ lettuce.costPerUnit*1}`);
 
 /**** TIME TO FLY SOLO ****/
 
@@ -160,18 +174,32 @@ yellowBellPepper.calculateTotal(5); // 5 peppers
 	Write a method outside the constructor called describe() that incorporates all three properties into a sentence and prints it to the console. Remember the syntax you must use to reference the properties that are inside the constructor.
 */
 
+class Instrument{
+	constructor(name, category, soundsLike){
+		this.name= name;
+		this.category= category;
+		this.soundsLike= soundsLike;
 
+	}
+	describe(){
+		console.log(`The details about the musical instrument are as follows:\nName: ${this.name}\nCategory: ${this.category}\nSounds Like: ${this.soundsLike}`);
+	}
+}
+
+let Violin= new Instrument("Violin", "Strings", "The sound is typically described as a rich, warm, and somewhat nasal tone, especially when bowed. ");
+let Clarinet= new Instrument(" Clarinet", "Wind", "The sound of a clarinet is often described as bright, clear, and slightly nasal, with a wide range of tonal qualities. ");
+let Drum= new Instrument("Drum", "Percussion", "The sound of a drum can vary greatly depending on the type of drum, its material, and how it's struck, ranging from a deep, resonant boom to a high-pitched, percussive crack");
 
 // TODO: Once your class is complete, un-comment the lines below to test it out.
 
 // let violin = new Instrument("violin", "string", "a whirlwind romance -- and the inevitable heartbreak that follows after");
-// violin.describe();
+Violin.describe();
 
 // let tuba = new Instrument("tuba", "brass", "Mr. Snuffleupagus trying to dance");
-// tuba.describe();
+Clarinet.describe();
 
 // let ukelele = new Instrument("ukelele", "string", "Barney and the Teletubbies got drunk and filmed a Hawaiian special together");
-// ukelele.describe();
+Drum.describe();
 
 // let bagpipe = new Instrument("bagpipe", "woodwind", "200 third-graders had a recorder recital next to a turbojet engine roaring at full throttle");
 // bagpipe.describe();
